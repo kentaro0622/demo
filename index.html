@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>SITE TITLE</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: sans-serif;
+            padding: 80px 0;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 最初のタイトルの佇まい */
+        .site-title {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-right: 20px;          /* メニュー文字との距離 */
+        }
+
+        img {
+            height: auto;
+            display: block;
+        }
+
+        
+        /* ─── 💡 ここから配置のバリエーション（小さく・密にする設定） ─── */
+        
+        /* [IMAGE 1] 左上にポツンと */
+        .pos-style-1 { 
+            width: 35%;         /* 💡本家サイズに小さく */
+            float: left;
+            margin-left: 5%;
+            margin-bottom: 20px;
+        }
+        
+        /* [IMAGE 2] 右上にスッと並ぶ（1枚目とほぼ同じ視野に入る） */
+        .pos-style-2 { 
+            width: 20%;
+            float: right;
+            margin-right: 5%;
+            margin-bottom: 20px;
+        }
+        
+        /* [IMAGE 3] 2枚の隙間のまんなか（やや下）に浮かぶ */
+        .pos-style-3 { 
+            width: 26%;
+            clear: both;        /* 💡上の2枚の下に回り込ませる */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* [IMAGE 4] 左下に静かに佇む */
+        .pos-style-4 { 
+            width: 24%;
+            float: left;
+            margin-left: 8%;
+            margin-top: -140px;
+        }
+        
+        /* [IMAGE 5] 右下にポツンと着地する */
+        .pos-style-5 { 
+            width: 25%;         /* 💡一番小さく */
+            float: right;
+            margin-right: 8%;
+            margin-top: -160px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="site-title">202606191648</div>
+    <br><br><br>
+
+    <img src="image1.jpg" class="pos-style-1">
+    
+    <img src="image3.jpg" class="pos-style-2">
+    
+    <img src="image2.png" class="pos-style-3">
+    
+    <img src="image4.jpg" class="pos-style-4">
+ 
+    <img src="image5.jpg" class="pos-style-5">
+
+    <div style="clear: both;"></div>
+
+</body>
+</html>
