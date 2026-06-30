@@ -2,94 +2,113 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>SITE TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RROSE Style Layout</title>
     <style>
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: sans-serif;
-            padding: 80px 0;
-            width: 100%;
-            max-width: none;
+        /* 1. 画面全体の初期化と背景画像の設定 */
+        body, html {
             margin: 0;
-            overflow-x: hidden;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: sans-serif;
+            overflow-x: hidden; /* 横スクロールバーの発生を防ぐ */
+
+            /* 💡 ここに背景画像の設定を追加しました */
+            background-image: url("bg.jpg");       /* 💻 用意してあるJPGのファイル名に変えてください */
+            background-size: cover;                /* 画面の縦横比に応じて隙間なく引き延ばす */
+            background-position: center center;    /* 画像の中心を画面の真ん中に合わせる */
+            background-attachment: fixed;          /* 💡 スクロールしても背景だけは動かずに固定する（お好みで） */
+            background-repeat: no-repeat;          /* 画像が格子状にリピートされるのを防ぐ */
         }
 
-        /* 最初のタイトルの佇まい */
+        /* ヘッダー風のタイトル設定 */
+        .site-header {
+            position: absolute;
+            top: 40px;          
+            left: 5%;
+            z-index: 10;
+        }
         .site-title {
-            font-size: 2rem;
+            font-size: 1.2rem;
             font-weight: normal;
-            margin-right: 20px;          /* メニュー文字との距離 */
+            margin: 0;
         }
 
-        img {
+        /* 2. 画面いっぱいに広がる親コンテナ */
+        .collage-container {
+            position: relative;
+            width: 100vw;       
+            height: 250vh;      
+            min-height: 1800px; 
+        }
+
+        /* 画像の共通設定 */
+        .collage-container img {
+            position: absolute;
             height: auto;
-            display: block;
         }
 
+        /* 3. 各画像の配置（縦の間隔を広く散らす） */
         
-        /* ─── 💡 ここから配置のバリエーション（小さく・密にする設定） ─── */
-        
-        /* [IMAGE 1] 左上にポツンと */
+        /* [IMAGE 1] 左上 */
         .pos-style-1 { 
-            width: 35%;         /* 💡本家サイズに小さく */
-            float: left;
-            margin-left: 5%;
-            margin-bottom: 20px;
+            width: 35vw;        
+            top: 25vh;          
+            left: 5vw;          
         }
         
-        /* [IMAGE 2] 右上にスッと並ぶ（1枚目とほぼ同じ視野に入る） */
+        /* [IMAGE 2] 中央上部（赤ケーブル） */
         .pos-style-2 { 
-            width: 20%;
-            float: right;
-            margin-right: 5%;
-            margin-bottom: 20px;
+            width: 10vw;
+            top: 45vh;          
+            left: 36vw;
         }
         
-        /* [IMAGE 3] 2枚の隙間のまんなか（やや下）に浮かぶ */
+        /* [IMAGE 3] 右上 */
         .pos-style-3 { 
-            width: 26%;
-            clear: both;        /* 💡上の2枚の下に回り込ませる */
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            width: 35vw;
+            top: 75vh;          
+            right: 8vw;         
         }
         
-        /* [IMAGE 4] 左下に静かに佇む */
+        /* [IMAGE 4] 左下（電球・部屋） */
         .pos-style-4 { 
-            width: 24%;
-            float: left;
-            margin-left: 8%;
-            margin-top: -140px;
+            width: 22vw;
+            top: 120vh;         
+            left: 8vw;
         }
-        
-        /* [IMAGE 5] 右下にポツンと着地する */
-        .pos-style-5 { 
-            width: 25%;         /* 💡一番小さく */
-            float: right;
-            margin-right: 8%;
-            margin-top: -160px;
+
+        /* [IMAGE 5] 右下（オープンリール） */
+        .pos-style-5 {
+            width: 30vw;
+            top: 160vh;         
+            right: 10vw;
+        }
+
+        /* [IMAGE 6] アンプ */
+        .pos-style-6 {
+            width: 50vw;        
+            top: 200vh;         
+            left: 36vw;         
         }
 
     </style>
 </head>
 <body>
 
-    <div class="site-title">202606191648</div>
-    <br><br><br>
+    <div class="site-header">
+        <div class="site-title">202606191648</div>
+    </div>
 
-    <img src="image1.jpg" class="pos-style-1">
-    
-    <img src="image3.jpg" class="pos-style-2">
-    
-    <img src="image2.png" class="pos-style-3">
-    
-    <img src="image4.jpg" class="pos-style-4">
- 
-    <img src="image5.jpg" class="pos-style-5">
-
-    <div style="clear: both;"></div>
+    <div class="collage-container">
+        <img src="image1.jpg" class="pos-style-1" alt="">
+        <img src="image2.jpg" class="pos-style-2" alt="">
+        <img src="image3.jpg" class="pos-style-3" alt="">
+        <img src="image4.jpg" class="pos-style-4" alt="">
+        <img src="image5.jpg" class="pos-style-5" alt="">
+        <img src="image6.jpg" class="pos-style-6" alt="">
+    </div>
 
 </body>
 </html>
